@@ -3,7 +3,7 @@ downloads: ~/.ansible-downloads/
 
 configure_sudoers: yes
 
-dotfiles_repo: https://github.com/geerlingguy/dotfiles.git
+dotfiles_repo: https://github.com/fubarhouse/mac-dev-playbook-dotfiles.git
 dotfiles_repo_local_destination: ~/Dropbox/Development/GitHub/dotfiles
 dotfiles_files:
   - .bash_profile
@@ -15,21 +15,9 @@ dotfiles_files:
 
 homebrew_installed_packages:
   - ansible
-  - autoconf
-  - bash-completion
-  - docker
-  - docker-compose
-  - docker-machine
-  - gettext
   - git
   - go
   - gpg
-  - hub
-  - httpie
-  - iperf
-  - libdvdcss
-  - libevent
-  - packer
   - python
   - sqlite
   - mcrypt
@@ -44,16 +32,13 @@ homebrew_installed_packages:
   - ios-sim
   - readline
   - subversion
-  - kdiff3
   - openssl
-  - pv
   - drush
   - wget
-  - wrk
-  - brew-cask
 
 homebrew_taps:
   - caskroom/cask
+  - caskroom/versions
   - homebrew/binary
   - homebrew/dupes
   - homebrew/php
@@ -61,29 +46,26 @@ homebrew_taps:
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
-  - adium
-  - bettertouchtool
+  # Browsers
   - google-chrome
+  - firefoxdeveloperedition
+  # Cloud-based storage
   - dropbox
-  - fing
-  - firefox
-  - handbrake
-  - karabiner
-  - limechat
-  - licecap
-  - macvim
-  - menumeters
-  - nvalt
-  - sequel-pro
-  - skype
-  - skitch
-  - seil
-  - sublime-text # Note - Sublime Text 2 only, at this time...
-  - textmate
-  - timemachineeditor
-  - tower
-  - transmit
-  - vagrant
-  - vagrant-manager
+  - google-drive
+  # Communication
+  - google-hangouts
+  # Creative
+  - adobe-creative-cloud #
+  - jetbrains-toolbox
+  # Entertainment
+  - steam
+  - kodi
   - vlc
+  # Tools
+  - ccleaner
+  # Tools - Development
+  - filezilla
+  - gitkraken
+  - teamviewer #
   - virtualbox
+  - vagrant
