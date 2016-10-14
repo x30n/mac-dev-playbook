@@ -21,6 +21,8 @@
 
 # Sudoers configuration (enables more convenient Vagrant usage).
 - name: Copy sudoers configuration into place.
+  become: yes
+  become_user: root
   copy:
     src: files/etc/sudoers
     dest: /etc/sudoers

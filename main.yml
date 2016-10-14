@@ -15,16 +15,9 @@
     - include: tasks/dockutil.yml
       when: '"dockutil" in homebrew_installed_packages'
     - include: tasks/sublime.yml
-      when: '"sublimte-text" in homebrew_cask_apps'
-#
+      when: '"sublime-text" in homebrew_cask_apps'
+
     - name: Run .osx dotfiles.
       shell: ~/.osx --no-restart
       changed_when: false
       when: '".osx" in dotfiles_files'
-
-# @TODO Prevent all errors.
-#   /usr/local recurse ownership
-#   /etc/ansible dir exists
-#
-# @TODO
-#   Determine if terminal is executing this
