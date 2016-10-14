@@ -1,18 +1,17 @@
 ---
 # Custom Terminal theme.
-- name: Get current Terminal profile.
+- name: Terminal | Get current Terminal profile.
   shell: defaults read com.apple.terminal 'Default Window Settings'
   register: terminal_theme
   changed_when: false
   always_run: yes
 
-- name: Ensure custom Terminal profile is added.
+- name: Terminal | Ensure custom Terminal profile is added.
   shell: open files/terminal/JJG-Term.terminal
   changed_when: false
   when: "'JJG-Term' not in terminal_theme.stdout"
 
-# TODO: This doesn't work in Yosemite. Consider a different solution?
-- name: Ensure custom Terminal profile is set as default.
+- name: Terminal | Ensure custom Terminal profile is set as default.
   shell: "{{ item }}"
   with_items:
     - defaults write com.apple.terminal 'Default Window Settings' -string JJG-Term
@@ -29,5 +28,4 @@
     validate: 'visudo -cf %s'
   become: yes
   when: configure_sudoers
-
-# TODO: Configure Sublime Text (see templates/sublime/*).
+  ignore_errors: yes

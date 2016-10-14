@@ -3,21 +3,15 @@
 - name: Dockutil | Remove all unwanted dock items
   shell: dockutil --remove "{{ item }}"
   ignore_errors: true
-  with_items: "{{ dockitems_to_remove }}"
-  when: '"dockutil" in homebrew_installed_packages'
-
-- name: Dockutil | Remove all wanted dock items
-  shell: dockutil --remove "{{ item }}"
-  ignore_errors: true
-  with_items: "{{ dockitems_to_persist }}"
-  when: '"dockutil" in homebrew_installed_packages'
+  with_items: "{{ dockitems_disabled }}"
+  when: "{{ dockitems_disabled | length > 0 }}"
 
 - name: Dockutil | Adding items
   shell: dockutil --find "{{ item.name }}" || dockutil --add "{{ item.path }}"
-  with_items: "{{ dockitems_to_persist }}"
-  when: '"dockutil" in homebrew_installed_packages'
+  with_items: "{{ dockitems_enabled }}"
+  when: "{{ dockitems_enabled | length > 0 }}"
 
 - name: Dockutil | Moving items
   shell: dockutil --move "{{ item.name }}" --position "{{ item.pos }}"
-  with_items: "{{ dockitems_to_persist }}"
-  when: '"dockutil" in homebrew_installed_packages'
+  with_items: "{{ dockitems_enabled }}"
+  when: "{{ dockitems_enabled | length > 0 }}"
