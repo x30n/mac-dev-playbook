@@ -1,5 +1,14 @@
 ---
 
+- name: Sublime | Ensure sublime directories exists.
+  file:
+    path: "{{ item }}"
+    state: directory
+  with_items:
+    - "{{ {{ sublime_dir }} }}"
+    - "{{ sublime_dir }}/{{ sublime_packageman_dir }}"
+    - "{{ sublime_dir }}/{{ sublime_packages_dir }}"
+
 - name: Sublime | Copying configuration
   copy:
     src: "./files/sublime/Library/Packages/User/Preferences.sublime-settings"
