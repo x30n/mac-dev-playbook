@@ -68,6 +68,7 @@ homebrew_cask_apps:
   - gitkraken
   - sublime-text
   - teamviewer
+  - tower
   - virtualbox
   - vagrant
 
@@ -111,12 +112,9 @@ dockitems_enabled:
   - name: iTerm
     path: "/Applications/iTerm.app"
     pos: 5
-  - name: JetBrains Toolbox
-    path: "/Applications/JetBrains Toolbox.app"
-    pos: 6
   - name: TeamViewer
     path: "/Applications/TeamViewer.app"
-    pos: 7
+    pos: 6
 
 #
 # Sublime Text configuration
