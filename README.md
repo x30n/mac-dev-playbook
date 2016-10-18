@@ -6,11 +6,13 @@ This playbook will be updated throughout my life with various features, function
 
 ## Installation
 
-  0. Run the following from the command line
-  1. Ensure Apple's command line tools are installed (`xcode-select --install` to launch the installer).
+  Run the following from the command line, and enter your administrative password when requested.
+  
+  Note that initially you'll need to install xcode command line tools before you can proceed.
+  
+  1. `xcode-select --install`
   2. `git clone https://github.com/fubarhouse/mac-dev-playbook ~/.setup`
-  3. `cd ~/.setup && ./install.sh`
-  4. Enter your administrative password when requested.
+  3. `cd ~/.setup && ./install.sh` 
 
 ## Included Applications / Configuration
 
