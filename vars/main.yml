@@ -123,6 +123,7 @@ dockitems_enabled:
 #
 
 sublime_dir: ~/Library/Application Support/Sublime Text 3
+sublime_user_dir: "User"
 sublime_packages_dir: "Packages"
 sublime_packageman_dir: "Installed Packages"
 sublime_packageman_file: https://packagecontrol.io/Package%20Control.sublime-package

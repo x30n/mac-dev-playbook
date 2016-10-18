@@ -5,9 +5,10 @@
     path: "{{ item }}"
     state: directory
   with_items:
-    - "{{ {{ sublime_dir }} }}"
+    - "{{ sublime_dir }}"
     - "{{ sublime_dir }}/{{ sublime_packageman_dir }}"
     - "{{ sublime_dir }}/{{ sublime_packages_dir }}"
+    - "{{ sublime_dir }}/{{ sublime_packages_dir }}/{{ sublime_user_dir }}"
 
 - name: Sublime | Copying configuration
   copy:
