@@ -3,11 +3,15 @@
 if [[ -z $(which brew) ]]; then
   echo "Installing Homebrew...";
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" > /dev/null;
+else
+  echo "found brew";
 fi
 
 if [[ -z $(which ansible) ]]; then
     echo "Installing Ansible";
     brew install ansible > /dev/null;
+else
+  echo "found ansible";
 fi
 
 rm -rf ~/Documents/dotfiles > /dev/null;
