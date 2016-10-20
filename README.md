@@ -11,8 +11,7 @@ This playbook will be updated throughout my life with various features, function
   Note that initially you'll need to install xcode command line tools before you can proceed.
   
   1. `xcode-select --install`
-  2. `git clone https://github.com/fubarhouse/mac-dev-playbook ~/.setup`
-  3. `cd ~/.setup && ./install.sh` 
+  2. `curl https://raw.githubusercontent.com/fubarhouse/mac-dev-playbook/master/install.sh | bash` 
 
 ## Included Applications / Configuration
 
