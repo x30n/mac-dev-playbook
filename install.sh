@@ -3,27 +3,37 @@
 if [[ -z $(which brew) ]]; then
   echo "Installing Homebrew...";
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" > /dev/null;
-else
-  echo "found brew";
 fi
 
 if [[ -z $(which ansible) ]]; then
     echo "Installing Ansible";
     brew install ansible > /dev/null;
-else
-  echo "found ansible";
 fi
 
-rm -rf ~/Documents/dotfiles > /dev/null;
-rm -rf ~/.setup > /dev/null;
+WHOAMI=$(whoami);
 
-git clone git@github.com:fubarhouse/mac-dev-playbook.git ~/.setup > /dev/null;
-git clone git@github.com:fubarhouse/mac-dev-playbook-dotfiles.git ~/Documents/dotfiles > /dev/null;
+if [[ -d "/Users/${WHOAMI}/Documents/dotfiles" ]]; then
+    echo "Removing dotfiles";
+    rm -rf "/Users/${WHOAMI}/Documents/dotfiles" > /dev/null;
+fi
+if [[ -d "/Users/${WHOAMI}/.setup" ]]; then
+    echo "Removing playbook";
+    rm -rf "/Users/${WHOAMI}/.setup" > /dev/null;
+fi
 
-cd ~/.setup/;
+git clone git@github.com:fubarhouse/mac-dev-playbook.git "/Users/${WHOAMI}/.setup" > /dev/null;
+git clone git@github.com:fubarhouse/mac-dev-playbook-dotfiles.git "/Users/${WHOAMI}/Documents/dotfiles" > /dev/null;
+
+cd "/Users/${WHOAMI}/.setup/";
 ansible-galaxy install -r ./requirements.yml > /dev/null;
 ansible-playbook ./main.yml -i inventory -U $(whoami) --ask-sudo-pass;
-cd ~;
+cd "/Users/${WHOAMI}";
 
-rm -rf ~/Documents/dotfiles  > /dev/null;
-rm -rf ~/.setup > /dev/null;
+if [[ -d "/Users/${WHOAMI}/Documents/dotfiles" ]]; then
+    echo "Removing dotfiles";
+    rm -rf "/Users/${WHOAMI}/Documents/dotfiles" > /dev/null;
+fi
+if [[ -d "/Users/${WHOAMI}/.setup" ]]; then
+    echo "Removing playbook";
+    rm -rf "/Users/${WHOAMI}/.setup" > /dev/null;
+fi
