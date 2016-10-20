@@ -1,0 +1,6 @@
+---
+
+- name: Mac Apple Store | Install apps.
+  shell: mas list | grep "{{ item }}" || mas install "{{ item }}"
+  with_items: "{{ mac_store_apps }}"
+  changed_when: result.stdout.find('Installed') != -1

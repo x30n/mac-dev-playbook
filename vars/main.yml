@@ -19,6 +19,7 @@ homebrew_installed_packages:
   - gpg
   - python
   - sqlite
+  - mas
   - mcrypt
   - mysql
   - npm
@@ -72,11 +73,20 @@ homebrew_cask_apps:
   - virtualbox
   - vagrant
 
-  #
-  # Dockutil
-  #
-  # To manage dock items.
-  #
+#
+# Mac Apple Store
+#
+# Apps to install from the app store.
+# Array of App ID's will only validate.
+#
+
+mac_store_apps: []
+
+#
+# Dockutil
+#
+# To manage dock items.
+#
 
 dockitems_disabled:
   - Launchpad
