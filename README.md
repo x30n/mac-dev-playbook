@@ -61,6 +61,8 @@ Packages (installed with Homebrew):
   - openssl
   - drush
   - wget
+  
+This playbook supports Mac Apple Store products, but none are currently a part of automation.
 
 My [dotfiles](https://github.com/fubarhouse/mac-dev-playbook-dotfiles) are also installed into the current user's home directory.
 
