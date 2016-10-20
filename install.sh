@@ -23,8 +23,8 @@ fi
 git clone git@github.com:fubarhouse/mac-dev-playbook.git ~/.setup > /dev/null;
 git clone git@github.com:fubarhouse/mac-dev-playbook-dotfiles.git ~/Documents/dotfiles > /dev/null;
 
-ansible-galaxy install -r requirements.yml > /dev/null;
-ansible-playbook main.yml -i inventory -U $(whoami) --ask-sudo-pass > /dev/null;
+ansible-galaxy install -r ~/.setup/requirements.yml > /dev/null;
+ansible-playbook ~/.setup/main.yml -i inventory -U $(whoami) --ask-sudo-pass > /dev/null;
 
 if [[ -d "~/Documents/dotfiles" ]]; then
     echo "Removing dotfiles";
