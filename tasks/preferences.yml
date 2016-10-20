@@ -28,6 +28,5 @@
     dest: /etc/sudoers
     mode: 0440
     validate: 'visudo -cf %s'
-  become: yes
   when: configure_sudoers
   ignore_errors: yes
