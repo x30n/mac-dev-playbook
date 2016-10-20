@@ -16,8 +16,10 @@ rm -rf ~/.setup > /dev/null;
 git clone git@github.com:fubarhouse/mac-dev-playbook.git ~/.setup > /dev/null;
 git clone git@github.com:fubarhouse/mac-dev-playbook-dotfiles.git ~/Documents/dotfiles > /dev/null;
 
-ansible-galaxy install -r ~/.setup/requirements.yml > /dev/null;
-ansible-playbook ~/.setup/main.yml -i inventory -U $(whoami) --ask-sudo-pass > /dev/null;
+cd ~/.setup/;
+ansible-galaxy install -r ./requirements.yml > /dev/null;
+ansible-playbook ./main.yml -i inventory -U $(whoami) --ask-sudo-pass;
+cd ~;
 
 rm -rf ~/Documents/dotfiles  > /dev/null;
 rm -rf ~/.setup > /dev/null;
