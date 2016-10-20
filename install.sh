@@ -29,10 +29,6 @@ ansible-galaxy install -r ./requirements.yml > /dev/null;
 ansible-playbook ./main.yml -i inventory -U $(whoami) --ask-sudo-pass;
 cd "/Users/${WHOAMI}";
 
-if [[ -d "/Users/${WHOAMI}/Documents/dotfiles" ]]; then
-    echo "Removing dotfiles";
-    rm -rf "/Users/${WHOAMI}/Documents/dotfiles" > /dev/null;
-fi
 if [[ -d "/Users/${WHOAMI}/.setup" ]]; then
     echo "Removing playbook";
     rm -rf "/Users/${WHOAMI}/.setup" > /dev/null;
