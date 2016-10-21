@@ -21,8 +21,8 @@ if [[ -d "/Users/${WHOAMI}/.setup" ]]; then
     rm -rf "/Users/${WHOAMI}/.setup" > /dev/null;
 fi
 
-git clone git@github.com:fubarhouse/mac-dev-playbook.git "/Users/${WHOAMI}/.setup" > /dev/null;
-git clone git@github.com:fubarhouse/mac-dev-playbook-dotfiles.git "/Users/${WHOAMI}/Documents/dotfiles" > /dev/null;
+git clone https://github.com/fubarhouse/mac-dev-playbook.git "/Users/${WHOAMI}/.setup" > /dev/null;
+git clone https://github.com/fubarhouse/mac-dev-playbook-dotfiles.git "/Users/${WHOAMI}/Documents/dotfiles" > /dev/null;
 
 cd "/Users/${WHOAMI}/.setup/";
 ansible-galaxy install -r ./requirements.yml > /dev/null;
