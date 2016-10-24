@@ -15,7 +15,7 @@ This playbook will be updated throughout my life with various features, function
 
 ## Included Applications / Configuration
 
-Applications (installed with Homebrew Cask):
+###Applications (installed with Homebrew Cask):
 
   - adobe-creative-cloud
   - ccleaner
@@ -37,7 +37,7 @@ Applications (installed with Homebrew Cask):
   - virtualbox
   - vlc
 
-Packages (installed with Homebrew):
+### Packages (installed with Homebrew):
 
   - ansible
   - dockutil
@@ -62,7 +62,9 @@ Packages (installed with Homebrew):
   - drush
   - wget
   
-This playbook supports Mac Apple Store products, but none are currently a part of automation.
+### Apple Store Products
+
+  - BlackMagic Disk Speed test
 
 My [dotfiles](https://github.com/fubarhouse/mac-dev-playbook-dotfiles) are also installed into the current user's home directory.
 

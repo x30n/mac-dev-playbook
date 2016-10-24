@@ -25,8 +25,19 @@ git clone git@github.com:fubarhouse/mac-dev-playbook.git "/Users/${WHOAMI}/.setu
 git clone git@github.com:fubarhouse/mac-dev-playbook-dotfiles.git "/Users/${WHOAMI}/Documents/dotfiles" > /dev/null;
 
 cd "/Users/${WHOAMI}/.setup/";
+# Get Username for Mac Store
+echo -n "Mac Store Email:"
+read -p APPSTOREEMAIL
+# Get Password for Mac Store
+echo -n "Mac Store Password:"
+read -ps APPSTOREPASSWORD
+if [[ ! "${APPSTOREEMAIL}" == '' ]] && [[ ! "${APPSTOREPASSWORD}" ]]; then
+    EXTRAVARS="--extra-vars \"app_store_email=${APPSTOREEMAIL} app_store_password=${APPSTOREPASSWORD}\""
+else
+    EXTRAVARS="==extra-vars \"\"";
+fi
 ansible-galaxy install -r ./requirements.yml > /dev/null;
-ansible-playbook ./main.yml -i inventory -U $(whoami) --ask-sudo-pass;
+ansible-playbook ./main.yml -i inventory -U $(whoami) --ask-sudo-pass "${EXTRAVARS}";
 cd "/Users/${WHOAMI}";
 
 if [[ -d "/Users/${WHOAMI}/.setup" ]]; then

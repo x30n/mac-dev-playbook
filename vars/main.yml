@@ -80,7 +80,9 @@ homebrew_cask_apps:
 # Array of App ID's will only validate.
 #
 
-mac_store_apps: []
+mac_store_apps:
+  - name: blackmagic-disk-speed-test
+    id: 425264550
 
 #
 # Dockutil
