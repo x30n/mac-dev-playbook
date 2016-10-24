@@ -31,16 +31,17 @@ read -srp "Mac Store Password: " APPSTOREPASSWORD;
 echo "";
 
 if [[ ! "${APPSTOREEMAIL}" == '' ]] && [[ ! "${APPSTOREPASSWORD}" ]]; then
-    EXTRAVARS="--extra-vars \"app_store_email=${APPSTOREEMAIL} app_store_password=${APPSTOREPASSWORD}\"";
+    EXTRAVARS="app_store_email=${APPSTOREEMAIL} app_store_password=${APPSTOREPASSWORD}";
 else
-    EXTRAVARS="";
+    EXTRAVARS="a=b";
 fi
 
 cd "/Users/${WHOAMI}/.setup/";
 echo "Installing requirements";
-ansible-galaxy install -r /Users/${WHOAMI}/.setup/requirements.yml;
+ansible-galaxy install -r ./requirements.yml;
 echo "Initiating playbook";
-ansible-playbook /Users/${WHOAMI}/.setup/main.yml -i inventory -U $(whoami) --ask-sudo-pass "${EXTRAVARS}";
+
+ansible-playbook ./main.yml -i inventory -U $(whoami) --ask-sudo-pass --extra-vars "\"${EXTRAVARS}\"";
 cd "/Users/${WHOAMI}";
 
 if [[ -d "/Users/${WHOAMI}/.setup" ]]; then
