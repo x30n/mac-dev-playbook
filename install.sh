@@ -37,7 +37,9 @@ else
 fi
 
 cd "/Users/${WHOAMI}/.setup/";
-ansible-galaxy install -r ./requirements.yml > /dev/null;
+echo "Installing requirements";
+ansible-galaxy install -r ./requirements.yml;
+echo "Initiating playbook";
 ansible-playbook ./main.yml -i inventory -U $(whoami) --ask-sudo-pass "${EXTRAVARS}";
 cd "/Users/${WHOAMI}";
 
