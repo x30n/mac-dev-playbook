@@ -41,9 +41,5 @@ ansible-galaxy install -r ./requirements.yml;
 echo "Initiating playbook";
 
 ansible-playbook ./main.yml -i inventory -U $(whoami) --ask-sudo-pass --extra-vars "\"${EXTRAVARS}\"";
-cd "/Users/${WHOAMI}";
 
-if [[ -d "/Users/${WHOAMI}/.setup" ]]; then
-    echo "Removing playbook";
-    rm -rf "/Users/${WHOAMI}/.setup" > /dev/null;
-fi
+echo "Done.";
