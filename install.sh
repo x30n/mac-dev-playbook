@@ -29,11 +29,8 @@ git clone https://github.com/fubarhouse/mac-dev-playbook-dotfiles.git "/Users/${
 
 if [[ -n $1 ]] && [[ -n $2 ]]; then
     EXTRAVARS="app_store_email=${1} app_store_password=${2}";
-    echo "user accepted as ${1}";
-    echo "pass accepted as ${2}";
 else
     EXTRAVARS="a=b";
-    echo "user/pass not found."
 fi
 
 cd "/Users/${WHOAMI}/.setup/";
