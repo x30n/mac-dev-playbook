@@ -36,7 +36,7 @@ fi
 cd "/Users/${WHOAMI}/.setup/";
 
 echo "Installing requirements";
-ansible-galaxy install ./requirements.yml;
+ansible-galaxy install -r ./requirements.yml;
 
 echo "Initiating playbook";
 
