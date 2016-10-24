@@ -38,9 +38,9 @@ fi
 
 cd "/Users/${WHOAMI}/.setup/";
 echo "Installing requirements";
-ansible-galaxy install -r ./requirements.yml;
+ansible-galaxy install -r /Users/${WHOAMI}/.setup/requirements.yml;
 echo "Initiating playbook";
-ansible-playbook ./main.yml -i inventory -U $(whoami) --ask-sudo-pass "${EXTRAVARS}";
+ansible-playbook /Users/${WHOAMI}/.setup/main.yml -i inventory -U $(whoami) --ask-sudo-pass "${EXTRAVARS}";
 cd "/Users/${WHOAMI}";
 
 if [[ -d "/Users/${WHOAMI}/.setup" ]]; then
