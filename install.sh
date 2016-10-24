@@ -1,7 +1,13 @@
 #!/bin/bash
 
-echo $1
-echo $2
+while getopts "u:p:" OPTION; do
+ case $OPTION in
+   u) APPSTOREEMAIL=$OPTARG;
+      ;;
+   p) APPSTOREPASSWORD=$OPTARG;
+      ;;
+ esac;
+done
 
 if [[ -z $(which brew) ]]; then
   echo "Installing Homebrew...";
@@ -26,15 +32,6 @@ fi
 
 git clone https://github.com/fubarhouse/mac-dev-playbook.git "/Users/${WHOAMI}/.setup" > /dev/null;
 git clone https://github.com/fubarhouse/mac-dev-playbook-dotfiles.git "/Users/${WHOAMI}/Documents/dotfiles" > /dev/null;
-
-# Get Username for Mac Store
-echo -n "Mac Store Email: "
-read -r APPSTOREEMAIL;
-echo "";
-# Get Password for Mac Store
-echo -n "Mac Store Password: "
-read -sr APPSTOREPASSWORD;
-echo "";
 
 if [[ ! "${APPSTOREEMAIL}" == '' ]] && [[ ! "${APPSTOREPASSWORD}" ]]; then
     EXTRAVARS="app_store_email=${APPSTOREEMAIL} app_store_password=${APPSTOREPASSWORD}";
