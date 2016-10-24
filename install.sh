@@ -28,7 +28,7 @@ git clone https://github.com/fubarhouse/mac-dev-playbook.git "/Users/${WHOAMI}/.
 git clone https://github.com/fubarhouse/mac-dev-playbook-dotfiles.git "/Users/${WHOAMI}/Documents/dotfiles" > /dev/null;
 
 if [[ -n $1 ]] && [[ -n $2 ]]; then
-    EXTRAVARS="app_store_email=${1} app_store_password=${2}";
+    EXTRAVARS="app_store_email=$1 app_store_password=$2";
 else
     EXTRAVARS="a=b";
 fi
