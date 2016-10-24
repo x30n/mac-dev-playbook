@@ -1,13 +1,10 @@
 #!/bin/bash
 
-while getopts "u:p:" OPTION; do
- case $OPTION in
-   u) APPSTOREEMAIL=$OPTARG;
-      ;;
-   p) APPSTOREPASSWORD=$OPTARG;
-      ;;
- esac;
-done
+# Usage:
+# install.sh accout@apple.com password
+
+APPSTOREEMAIL=$1;
+APPSTOREPASSWORD=$2;
 
 if [[ -z $(which brew) ]]; then
   echo "Installing Homebrew...";
