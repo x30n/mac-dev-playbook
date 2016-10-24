@@ -27,7 +27,7 @@ fi
 git clone https://github.com/fubarhouse/mac-dev-playbook.git "/Users/${WHOAMI}/.setup" > /dev/null;
 git clone https://github.com/fubarhouse/mac-dev-playbook-dotfiles.git "/Users/${WHOAMI}/Documents/dotfiles" > /dev/null;
 
-if [[ ! "${1}" == '' ]] && [[ ! "${2}" ]]; then
+if [[ "${1}" == '' ]] && [[ ! "${2}" == '' ]]; then
     EXTRAVARS="app_store_email=${1} app_store_password=${2}";
     echo "user accepted as ${1}";
     echo "pass accepted as ${2}";
