@@ -3,9 +3,6 @@
 # Usage:
 # install.sh accout@apple.com password
 
-APPSTOREEMAIL=$1;
-APPSTOREPASSWORD=$2;
-
 if [[ -z $(which brew) ]]; then
   echo "Installing Homebrew...";
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" > /dev/null;
@@ -30,8 +27,10 @@ fi
 git clone https://github.com/fubarhouse/mac-dev-playbook.git "/Users/${WHOAMI}/.setup" > /dev/null;
 git clone https://github.com/fubarhouse/mac-dev-playbook-dotfiles.git "/Users/${WHOAMI}/Documents/dotfiles" > /dev/null;
 
-if [[ ! "${APPSTOREEMAIL}" == '' ]] && [[ ! "${APPSTOREPASSWORD}" ]]; then
-    EXTRAVARS="app_store_email=${APPSTOREEMAIL} app_store_password=${APPSTOREPASSWORD}";
+if [[ ! "${1}" == '' ]] && [[ ! "${2}" ]]; then
+    EXTRAVARS="app_store_email=${1} app_store_password=${2}";
+    echo "user accepted as ${1}";
+    echo "pass accepted as ${2}";
 else
     EXTRAVARS="a=b";
 fi
