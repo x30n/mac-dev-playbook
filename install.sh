@@ -40,6 +40,7 @@ ansible-galaxy install -r ./requirements.yml;
 
 echo "Initiating playbook";
 
+echo "ansible-playbook ./main.yml -i inventory -U $(whoami) --ask-sudo-pass --extra-vars "\"${EXTRAVARS}\"";"
 ansible-playbook ./main.yml -i inventory -U $(whoami) --ask-sudo-pass --extra-vars "\"${EXTRAVARS}\"";
 
 echo "Done.";
