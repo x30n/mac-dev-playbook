@@ -35,9 +35,8 @@ fi
 
 cd "/Users/${WHOAMI}/.setup/";
 
-# Removing role installation - see https://github.com/ansible/ansible/issues/11266
-# echo "Installing requirements";
-# ansible-galaxy install ./requirements.yml;
+echo "Installing requirements";
+ansible-galaxy install ./requirements.yml;
 
 echo "Initiating playbook";
 
