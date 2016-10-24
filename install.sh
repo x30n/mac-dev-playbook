@@ -1,5 +1,8 @@
 #!/bin/bash
 
+echo $1
+echo $2
+
 if [[ -z $(which brew) ]]; then
   echo "Installing Homebrew...";
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" > /dev/null;
