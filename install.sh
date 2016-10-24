@@ -25,12 +25,12 @@ git clone https://github.com/fubarhouse/mac-dev-playbook.git "/Users/${WHOAMI}/.
 git clone https://github.com/fubarhouse/mac-dev-playbook-dotfiles.git "/Users/${WHOAMI}/Documents/dotfiles" > /dev/null;
 
 cd "/Users/${WHOAMI}/.setup/";
+
 # Get Username for Mac Store
-echo -n "Mac Store Email:"
-read -p APPSTOREEMAIL;
+read -p "Mac Store Email:" APPSTOREEMAIL;
 # Get Password for Mac Store
-echo -n "Mac Store Password:"
-read -ps APPSTOREPASSWORD;
+read -p "Mac Store Password:" -s APPSTOREPASSWORD;
+
 if [[ ! "${APPSTOREEMAIL}" == '' ]] && [[ ! "${APPSTOREPASSWORD}" ]]; then
     EXTRAVARS="--extra-vars \"app_store_email=${APPSTOREEMAIL} app_store_password=${APPSTOREPASSWORD}\"";
 else
