@@ -36,8 +36,11 @@ else
 fi
 
 cd "/Users/${WHOAMI}/.setup/";
-echo "Installing requirements";
-ansible-galaxy install ./requirements.yml;
+
+# Removing role installation - see https://github.com/ansible/ansible/issues/11266
+# echo "Installing requirements";
+# ansible-galaxy install ./requirements.yml;
+
 echo "Initiating playbook";
 
 ansible-playbook ./main.yml -i inventory -U $(whoami) --ask-sudo-pass --extra-vars "\"${EXTRAVARS}\"";
