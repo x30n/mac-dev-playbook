@@ -84,6 +84,8 @@ homebrew_cask_apps:
 mac_store_apps:
   - name: blackmagic-disk-speed-test
     id: 425264550
+  - name: onedrive
+    id: 823766827
 
 #
 # Dockutil
