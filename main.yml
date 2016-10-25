@@ -4,10 +4,16 @@
 
   vars_files:
     - vars/main.yml
+    - vars/vars-homebrew.yml
+    - vars/vars-dotfiles.yml
+    - vars/vars-dockutil.yml
+    - vars/vars-applestore.yml
+    - vars/vars-sublime.yml
 
   roles:
     - geerlingguy.homebrew
     - geerlingguy.dotfiles
+#    - fubarhouse.sublime
 
   tasks:
     - include: tasks/ansible-setup.yml
