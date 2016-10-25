@@ -47,6 +47,7 @@ This playbook will be updated throughout my life with various features, function
   - vagrant
   - virtualbox
   - vlc
+  - xbox360-controller-driver
 
 ### Packages (installed with Homebrew):
 
@@ -76,6 +77,7 @@ This playbook will be updated throughout my life with various features, function
 ### Apple Store Products
 
   - BlackMagic Disk Speed test
+  - Microsoft OneDrive
 
 My [dotfiles](https://github.com/fubarhouse/mac-dev-playbook-dotfiles) are also installed into the current user's home directory.
 

@@ -82,9 +82,9 @@ homebrew_cask_apps:
 #
 
 mac_store_apps:
-  - name: blackmagic-disk-speed-test
+  - name: BlackMagic Disk Speed test
     id: 425264550
-  - name: onedrive
+  - name: Microsoft OneDrive
     id: 823766827
 
 #
