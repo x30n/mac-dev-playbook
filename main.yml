@@ -1,7 +1,6 @@
 ---
 - hosts: localhost
   connection: local
-
   vars_files:
     - vars/main.yml
     - vars/vars-homebrew.yml
@@ -9,6 +8,13 @@
     - vars/vars-dockutil.yml
     - vars/vars-applestore.yml
     - vars/vars-sublime.yml
+  vars_prompt:
+  - name: app_store_email
+    prompt: Mac Apple Store ID
+    private: no
+  - name: app_store_password
+    prompt: Mac Apple Store Password
+    private: yes
 
   roles:
     - geerlingguy.homebrew
@@ -21,7 +27,7 @@
     - include: tasks/dockutil.yml
       when: '"dockutil" in homebrew_installed_packages'
     - include: tasks/mac-apple-store.yml
-      when: '"mas" in homebrew_installed_packages'
+      when: install_mas_products
     - include: tasks/sublime.yml
       when: '"sublime-text" in homebrew_cask_apps'
 

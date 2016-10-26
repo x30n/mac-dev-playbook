@@ -1,4 +1,8 @@
 ---
+- name: Mac Apple Store | Ensure MAS is installed
+  homebrew:
+    name: mas
+    state: present
 
 - name: Mac Apple Store | Signing out
   shell: "mas signout"
