@@ -8,7 +8,6 @@ homebrew_installed_packages:
   - gpg
   - python
   - sqlite
-  - mas
   - mcrypt
   - mysql
   - npm

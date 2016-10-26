@@ -27,12 +27,6 @@ fi
 git clone https://github.com/fubarhouse/mac-dev-playbook.git "/Users/${WHOAMI}/.setup" > /dev/null;
 git clone https://github.com/fubarhouse/mac-dev-playbook-dotfiles.git "/Users/${WHOAMI}/Documents/dotfiles" > /dev/null;
 
-if [[ -n $1 ]] && [[ -n $2 ]]; then
-    EXTRAVARS="app_store_email=$1 app_store_password=$2";
-else
-    EXTRAVARS="a=b";
-fi
-
 cd "/Users/${WHOAMI}/.setup/";
 
 echo "Installing requirements";
@@ -40,6 +34,6 @@ ansible-galaxy install -r ./requirements.yml;
 
 echo "Initiating playbook";
 
-ansible-playbook ./main.yml -i inventory -U $(whoami) --ask-sudo-pass --extra-vars "${EXTRAVARS}";
+ansible-playbook ./main.yml -i inventory -U $(whoami) --ask-sudo-pass;
 
 echo "Done.";
