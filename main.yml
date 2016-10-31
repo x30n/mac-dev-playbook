@@ -5,29 +5,26 @@
     - vars/main.yml
     - vars/vars-homebrew.yml
     - vars/vars-dotfiles.yml
-    - vars/vars-dockutil.yml
-    - vars/vars-applestore.yml
-    - vars/vars-sublime.yml
   vars_prompt:
   - name: app_store_email
     prompt: Mac Apple Store ID
     private: no
+    when: app_store_email is undefined
   - name: app_store_password
     prompt: Mac Apple Store Password
     private: yes
+    when: app_store_password is undefined
 
   roles:
     - geerlingguy.homebrew
     - geerlingguy.dotfiles
     - fubarhouse.sublime-drupal
+    - fubarhouse.macstore
+    - fubarhouse.macdock
 
   tasks:
     - include: tasks/ansible-setup.yml
     - include: tasks/preferences.yml
-    - include: tasks/dockutil.yml
-      when: '"dockutil" in homebrew_installed_packages'
-    - include: tasks/mac-apple-store.yml
-      when: install_mas_products
 
     - name: Run .osx dotfiles.
       shell: ~/.osx --no-restart
