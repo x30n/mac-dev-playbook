@@ -50,6 +50,9 @@ homebrew_cask_apps:
   - kodi
   - vlc
   - xbox360-controller-driver
+  # Information
+  - geekbench
+  - mactracker
   # Tools
   - ccleaner
   - iterm2
