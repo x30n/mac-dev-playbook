@@ -5,6 +5,8 @@
     - vars/main.yml
     - vars/vars-homebrew.yml
     - vars/vars-dotfiles.yml
+    - vars/vars-dockutil.yml
+    - vars/vars-applestore.yml
   vars_prompt:
   - name: app_store_email
     prompt: Mac Apple Store ID
