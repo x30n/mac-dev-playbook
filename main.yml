@@ -20,7 +20,6 @@
   roles:
     - geerlingguy.homebrew
     - geerlingguy.dotfiles
-    - fubarhouse.sublime-drupal
     - fubarhouse.macstore
     - fubarhouse.macfonts
     - fubarhouse.macdock
